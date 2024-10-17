@@ -1,9 +1,9 @@
-# Your Name Here
+# Isabella Cardoso
 # UWYO COSC 1010
-# Submission Date
+# 10/17/2024
 # Lab 06
-# Lab Section: 
-# Sources, people worked with, help given to: 
+# Lab Section: 12
+# Sources, people worked with, help given to: Kelly Joyce, my TA
 # your
 # comments
 # here
@@ -71,6 +71,44 @@ print(len(random_string)) # Print out the size for reference
 # Output which letter occurred the least 
 # Output what the percentage of the string each character is, again in alphabetical
 
+alphabet = {}
+
+for alpha in random_string:
+    if alpha not in alphabet.keys():
+        alphabet[alpha] = 1
+    else:
+        new_letter = alphabet[alpha] + 1
+        alphabet[alpha] = new_letter
+ 
+print(alphabet)
+
+for key, value in sorted(alphabet.items()):
+    print(f"{key}: {value}")
+
+sorted(alphabet.values())
+for value in sorted(alphabet.keys()):
+    print(value, alphabet[value])
+for key in alphabet:
+    if alphabet[key] == sorted(alphabet.values())[0]: # this runs through sorted(alphabet.values()) and finds the lowest value and prints the key
+        print(key)
+    elif alphabet[key] ==sorted(alphabet.values())[-1]: #this runs through sorted(alphabet.values()) and finds the highest value and prints the key
+        print(key)
+
+most_occurred = "k"
+least_occurred = "n"
+
+print(f"The letter that occurred the most is {most_occurred}")
+print(f"The letter that occurred the most is {least_occurred}")
+
+alpha_percentage = {}
+for letter, num in alphabet.items():
+    key = letter
+    percentage = num/len(alphabet)
+
+    alpha_percentage[letter] = percentage
+for key, value in sorted(alpha_percentage.items()):
+    print(f"{key}: {value}")
+    
 #Tips and trick:
 # You can iterate through strings like you would a list
 # All characters are lowercase 
